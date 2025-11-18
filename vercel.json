@@ -1,0 +1,21 @@
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev:full",
+  "framework": "vite",
+  "rootDirectory": "Sunflix Video Platform 2",
+  "env": {
+    "VITE_DB_NAME": "sunflix"
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/handler" }
+  ],
+  "functions": {
+    "api/handler.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
+
