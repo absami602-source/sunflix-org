@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev:full",
+  "env": {
+    "VITE_DB_NAME": "sunflix"
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/handler" }
+  ],
+  "functions": {
+    "api/handler.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
